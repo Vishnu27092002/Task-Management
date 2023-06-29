@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block title %}
+About us
+{% endblock title %}
+
+
+
+{% block body %}
+ <h3 class="text-center"><span>Search Your Details</span> </h3>
+  
+{% with messages=get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+
+<div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+    {{message}}
+
+
+</div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+<br>
+<div class="container">
+
+<div class="row">
+
+<div class="col-md-4">
+
+<form action="/about" method="post">
+    <body>
+        <header>
+            <h1>About Us</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Our Team</h2>
+                <p>We are a dedicated team of professionals passionate about our work. Get to know the individuals who make up our team:</p>
+                <ul>
+                    <li>
+                        <h3>prem chand</h3>
+                        <p>prem is the CEO and co-founder of our company. With his visionary leadership, we have achieved significant milestones.</p>
+                    </li>
+                    <li>
+                        <h3>Jane Smith</h3>
+                        <p>Jane is our lead developer. She brings extensive technical expertise and ensures the quality of our projects.</p>
+                    </li>
+                    <li>
+                        <h3>Michael Johnson</h3>
+                        <p>Michael is our marketing specialist. He devises effective strategies to promote our products and reach our target audience.</p>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Our Mission</h2>
+                <p>At our company, we strive to deliver innovative solutions that meet the needs of our clients. Our mission is to provide high-quality products and services that exceed expectations.</p>
+            </section>
+            <section>
+                <h2>Contact Us</h2>
+                <p>If you have any questions or inquiries, feel free to reach out to us. We are always happy to assist you.</p>
+                <ul>
+                    <li>Email: info@example.com</li>
+                    <li>Phone: 123-456-7890</li>
+                    <li>Address: 123 Main Street, City, Country</li>
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2023 Your Company. All rights reserved.</p>
+        </footer>
+    </body>
+{% endblock body %}
